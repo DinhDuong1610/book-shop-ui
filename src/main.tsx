@@ -6,7 +6,7 @@ import HomePage from 'pages/client/home'
 import AboutPage from 'pages/client/about'
 import BookPage from 'pages/client/book'
 import LoginPage from 'pages/client/auth/login'
-import RegisterPage from 'pages/client/auth/register '
+import RegisterPage from '@/pages/client/auth/register'
 import 'styles/global.scss'
 import { App } from 'antd'
 

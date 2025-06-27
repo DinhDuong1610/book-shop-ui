@@ -3,7 +3,7 @@ import { App, Button, Card, Divider, Form, Input } from 'antd';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './register.scss';
-import { registerAPI } from '../../../services/api';
+import { registerAPI } from 'services/api';
 
 type FieldType = {
     fullName?: string;
