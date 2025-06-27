@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import type { FormProps } from 'antd';
 import { loginAPI } from "services/api";
 import './login.scss';
+import { useCurrentApp } from "components/context/app.context";
 type FieldType = {
     username?: string;
     password?: string;
@@ -12,6 +13,7 @@ const LoginPage = () => {
     const [isSubmit, setIsSubmit] = useState<boolean>(false);
     const { message, notification } = App.useApp();
     const navigate = useNavigate();
+    const { setIsAuthenticated, setUser } = useCurrentApp();
 
     const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
         setIsSubmit(true);
@@ -19,9 +21,11 @@ const LoginPage = () => {
 
         const res = await loginAPI(username, password);
         if (res.data) {
-            localStorage.setItem('token', res.data.access_token);
+            setIsAuthenticated(true);
+            setUser(res.data.user);
+            localStorage.setItem('token', res.data.accessToken);
             message.success("Đăng nhập thành công");
-            navigate('/login');
+            navigate('/');
         } else {
             notification.error({
                 message: "Đăng nhập thất bại",
