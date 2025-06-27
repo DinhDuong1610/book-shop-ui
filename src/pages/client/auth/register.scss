@@ -1,0 +1,15 @@
+.register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    padding: 100px 0px;
+    background-color: #f6f6f6;
+    height: 100vh;
+    h2,p {
+        text-align: center;
+    }
+}
+.register-page .container {
+    width: 500px;
+}
