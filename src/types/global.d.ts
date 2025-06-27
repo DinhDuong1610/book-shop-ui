@@ -23,7 +23,10 @@ declare global {
         user: {
             id: string;
             fullName: string;
-            role: string;
+            role: {
+                id: number;
+                name: string;
+            }
             avatar: string;
             email: string;
             phone: string;
@@ -39,7 +42,10 @@ declare global {
     interface IUser {
         id: string;
         fullName: string;
-        role: string;
+        role: {
+            id: number;
+            name: string;
+        }
         avatar: string;
         email: string;
         phone: string;
